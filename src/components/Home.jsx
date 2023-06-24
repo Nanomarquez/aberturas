@@ -1,6 +1,5 @@
 import './Button.css';
 
-
 function Home({ clicked }) {
 	return (
 		<>
