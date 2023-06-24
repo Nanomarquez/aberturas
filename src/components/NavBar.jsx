@@ -17,7 +17,7 @@ function Navbar({ clicked, handleClick }) {
 					className="object-cover z-20"
 				/>
 
-				<div className={`links ${clicked ? 'active' : ''}`}>
+				<div className={`links ${clicked ? 'active' : ''} gap-7`}>
 					<Link
 						className="drop-shadow-lg font-semibold"
 						to={'/'}>
@@ -46,13 +46,13 @@ function Navbar({ clicked, handleClick }) {
 					<div className="social-links">
 						<a
 							href="https://www.facebook.com/profile.php?id=100090343286715"
-							target="blank_">
-							<FaFacebook />
+							target="_blank">
+							<FaFacebook className='text-6xl'/>
 						</a>
 						<a
 							href="https://www.instagram.com/tecnoaberturasdc/"
-							target="blank_">
-							<FaInstagram />
+							target="_blank">
+							<FaInstagram className='text-6xl'/>
 						</a>
 					</div>
 				</div>
