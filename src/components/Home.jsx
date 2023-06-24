@@ -1,8 +1,40 @@
-function Home() {
+import './Button.css';
 
-  return (
-    <div>Homeeee</div>
-  )
+function Home({ clicked }) {
+	return (
+		<>
+			<section className="slider bg-[url('public/images/zane-lee-ECsnJcc0Dhs-unsplash-scaled.jpg')] h-screen bg-cover bg-center">
+				<div className="load"></div>
+				<div className="content">
+					{!clicked && (
+						<div className=" flex flex-col items-center pt-60">
+							<h4 className="sm: text-4xl lg:text-6xl font-bold text-white">
+								DISEÑO PERSONALIZADO
+							</h4>
+							<button className="btn btn-1 hover-filled-slide-right">
+								<span>cotice ahora</span>
+							</button>
+						</div>
+					)}
+				</div>
+			</section>
+			<section className="slider bg-[url('public/images/zane-lee-ECsnJcc0Dhs-unsplash-scaled.jpg')] h-screen bg-cover bg-center">
+				<div className="load"></div>
+				<div className="content">
+					{!clicked && (
+						<div className=" flex flex-col items-center pt-60">
+							<h4 className="sm: text-4xl lg:text-6xl font-bold text-white">
+								DISEÑO PERSONALIZADO
+							</h4>
+							<button className="btn btn-1 hover-filled-slide-right">
+								<span>cotice ahora</span>
+							</button>
+						</div>
+					)}
+				</div>
+			</section>
+		</>
+	);
 }
 
-export default Home
+export default Home;
