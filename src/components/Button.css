@@ -51,17 +51,17 @@
 
 @keyframes slide {
 	0% {
-		background-image: url('/images/tecnoaberturasdc.jpg');
+		background-image: url('/images/r-architecture-updbdgKxp5k-unsplash-scaled.jpg');
 		transform: translateX(0);
 		opacity: 1;
 	}
 	15% {
-		background-image: url('/images/tecnoaberturasdc.jpg');
+		background-image: url('/images/r-architecture-updbdgKxp5k-unsplash-scaled.jpg');
 		transform: translateX(0);
 		opacity: 1;
 	}
 	25% {
-		background-image: url('/images/tecnoaberturasdc.jpg');
+		background-image: url('/images/r-architecture-updbdgKxp5k-unsplash-scaled.jpg');
 		opacity: 0;
 	}
 	25% {
@@ -107,7 +107,7 @@
 		opacity: 0;
 	}
 	100% {
-		background-image: url('/images/tecnoaberturasdc.jpg');
+		background-image: url('/images/r-architecture-updbdgKxp5k-unsplash-scaled.jpg');
 		opacity: 1;
 	}
 }
