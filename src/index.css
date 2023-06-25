@@ -11,4 +11,5 @@
    font-family: "Gotham Book", sans-serif;
    padding: 0;
    margin: 0;
+   scroll-behavior: smooth;
 }

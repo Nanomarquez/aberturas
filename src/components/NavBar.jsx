@@ -6,6 +6,7 @@ import LogoImg from '../assets/logo-1-140x76.png';
 import { useState, useEffect , useRef} from 'react';
 
 function Navbar({ clicked, handleClick }) {
+	
   const [prevScrollPos, setPrevScrollPos] = useState(window.pageYOffset);
   const [navbarVisible, setNavbarVisible] = useState(true);
   const navbarRef = useRef(null);
