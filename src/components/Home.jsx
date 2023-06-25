@@ -66,7 +66,8 @@ function Home({ clicked }) {
           Solicitanos el envío y la instalación completa de tus aberturas.{" "}
           </small>
           <button data-aos-delay="600" data-aos-duration="1000"
-                data-aos="fade-right" className="self-center btn btn-1 hover-filled-slide-right m-0 sm:self-start"> <span>Contacto</span></button>
+                data-aos="fade-right" className="self-center btn btn-1 hover-filled-slide-right m-0 sm:self-start"> <span className="flex">Contacto</span>
+                </button>
         </div>
       </Parallax>
     </>
