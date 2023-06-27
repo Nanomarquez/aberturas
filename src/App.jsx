@@ -10,31 +10,48 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 function App() {
-  const [clicked, setClicked] = React.useState(false);
-  const handleClick = () => {
-    //cuando esta true lo pasa a false y vice versa
-    setClicked(!clicked);
-  };
+	const [clicked, setClicked] = React.useState(false);
+	const handleClick = () => {
+		if (window.innerWidth < 768){
+			//cuando esta true lo pasa a false y vice versa
+			setClicked(!clicked);
+		}
+	};
 
-  useEffect(() => {
-    AOS.init({
-      mirror: true,
-    });
-  }, []);
+	useEffect(() => {
+		AOS.init();
+	}, []);
 
-  return (
-    <>
-      <Header clicked={clicked} handleClick={handleClick} />
-      <Routes>
-        <Route path="/" element={<Home clicked={clicked} />} />
-        <Route path="/productos" element={<Productos />} />
-        <Route path="/nosotros" element={<Nosotros />} />
-        <Route path="/obras" element={<Obras />} />
-        <Route path="/contacto" element={<Contacto />} />
-        <Route path="/obras" element={<Obras />} />
-      </Routes>
-    </>
-  );
+	return (
+		<>
+			<Header
+				clicked={clicked}
+				handleClick={handleClick}
+			/>
+			<Routes>
+				<Route
+					path="/"
+					element={<Home />}
+				/>
+				<Route
+					path="/productos"
+					element={<Productos />}
+				/>
+				<Route
+					path="/nosotros"
+					element={<Nosotros />}
+				/>
+				<Route
+					path="/obras"
+					element={<Obras />}
+				/>
+				<Route
+					path="/contacto"
+					element={<Contacto />}
+				/>
+			</Routes>
+		</>
+	);
 }
 
 export default App;

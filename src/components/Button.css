@@ -154,7 +154,7 @@
 
 /*--- btn-1 ---*/
 .btn-1::before {
-	background-color: rgb(28, 31, 30);
+	background-color: #123654;
 	transition: 0.3s ease-out;
 }
 .btn-1 span {
@@ -165,7 +165,7 @@
 .btn-1 span:hover {
 	color: rgb(28, 31, 30);
 	transition: 0.2s 0.1s;
-	background-color: white;
+	background-color: #c9ccce;
 	/* transition-duration: 1; */
 }
 

@@ -24,6 +24,16 @@ body::-webkit-scrollbar-thumb {
 
 img {
   background-size: cover;
+
+ }
+
+ .special-label {
+  display: none;
+ }
+ .form-control {
+  outline: none !important; 
+ }
+
 }
 .gallery{
   -webkit-column-count: 3;
@@ -74,3 +84,4 @@ img {
 .pics:hover .card-body{
   right:0;
 }
+
