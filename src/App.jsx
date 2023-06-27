@@ -10,16 +10,17 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 function App() {
-	
 	const [clicked, setClicked] = React.useState(false);
 	const handleClick = () => {
-		//cuando esta true lo pasa a false y vice versa
-		setClicked(!clicked);
+		if (window.innerWidth < 768){
+			//cuando esta true lo pasa a false y vice versa
+			setClicked(!clicked);
+		}
 	};
 
 	useEffect(() => {
 		AOS.init();
-	}, [])
+	}, []);
 
 	return (
 		<>
@@ -30,7 +31,7 @@ function App() {
 			<Routes>
 				<Route
 					path="/"
-					element={<Home clicked={clicked} />}
+					element={<Home />}
 				/>
 				<Route
 					path="/productos"

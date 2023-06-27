@@ -1,14 +1,17 @@
 import './NavBar.css';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { FaFacebook, FaInstagram } from 'react-icons/fa';
 import BurguerButton from './BurguerButton';
-import LogoImg from '../assets/logo-1-140x76.png';
+import LogoImg from '../../public/images/Logo-_Tecno_Aberturas_DC__2_-removebg-preview.png';
 import { useState, useEffect, useRef } from 'react';
 
 function Navbar({ clicked, handleClick }) {
 	const [prevScrollPos, setPrevScrollPos] = useState(window.pageYOffset);
 	const [navbarVisible, setNavbarVisible] = useState(true);
 	const navbarRef = useRef(null);
+
+	const location = useLocation();
+	const navBarColor = location.pathname === '/contacto' ? '#040404' : '#33333354';
 
 	useEffect(() => {
 		const handleScroll = () => {
@@ -54,6 +57,7 @@ function Navbar({ clicked, handleClick }) {
 		});
 	}, []);
 
+	// console.log(navBarColor)
 	return (
 		<>
 			<div
@@ -66,7 +70,9 @@ function Navbar({ clicked, handleClick }) {
 				className={`nav-container fixed duration-200 ${
 					navbarVisible ? '' : 'hiddden'
 				} w-full ${
-					!clicked ? 'bg-[#33333354] backdrop-blur-sm drop-shadow-sm' : 'bg-transparent'
+					!clicked
+						? `bg-[${navBarColor}] backdrop-blur-sm drop-shadow-sm`
+						: 'bg-transparent'
 				}`}>
 				<Link
 					id="home"
@@ -74,34 +80,39 @@ function Navbar({ clicked, handleClick }) {
 					<img
 						src={LogoImg}
 						alt="Logo img"
-						className="object-cover z-20"
+						className=" max-w-[13rem]"
 					/>
 				</Link>
 
 				<div className={`links ${clicked ? 'active' : ''} gap-7`}>
 					<Link
 						className="drop-shadow-lg font-semibold py-1 px-2"
-						to={'/'}>
+						to={'/'}
+						onClick={handleClick}>
 						INICIO
 					</Link>
 					<Link
 						className="drop-shadow-lg font-semibold py-1 px-2"
-						to={'/productos'}>
+						to={'/productos'}
+						onClick={handleClick}>
 						PRODUCTOS
 					</Link>
 					<Link
 						className="drop-shadow-lg font-semibold py-1 px-2"
-						to={'/nosotros'}>
+						to={'/nosotros'}
+						onClick={handleClick}>
 						NOSOTROS
 					</Link>
 					<Link
 						className="drop-shadow-lg font-semibold py-1 px-2"
-						to={'/obras'}>
+						to={'/obras'}
+						onClick={handleClick}>
 						OBRAS
 					</Link>
 					<Link
 						className="drop-shadow-lg font-semibold py-1 px-2"
-						to={'/contacto'}>
+						to={'/contacto'}
+						onClick={handleClick}>
 						CONTACTO
 					</Link>
 					<div className="social-links">
@@ -127,7 +138,7 @@ function Navbar({ clicked, handleClick }) {
 				<div
 					id="menu-backdrop"
 					className={` 
-     				absolute bg-black/5 backdrop-blur-lg rounded
+     				absolute bg-slate-300/50 backdrop-blur-lg rounded
     			   translate-x-[var(--left)] translate-y-[var(--top)]
      				left-0 top-0
      				w-[var(--width)] h-[var(--height)]

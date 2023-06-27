@@ -25,3 +25,11 @@ body::-webkit-scrollbar {
  img{
   background-size: cover;
  }
+
+ .special-label {
+  display: none;
+ }
+ .form-control {
+  outline: none !important; 
+ }
+
