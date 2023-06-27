@@ -38,18 +38,18 @@ export default function Form() {
 
 	return (
 		<>
-			<div className=" grid sm:grid-cols-1 lg:grid-cols-2 gap-4 py-[120px] px-[40px] ">
-				<div className="flex flex-col items-center pb-20  justify-evenly">
+			<div className=" grid sm:grid-cols-1 lg:grid-cols-2 gap-4 pt-[120px] pb-[60px] px-[40px] ">
+				<div className="flex flex-col items-center justify-evenly">
 					<h6 className="text-lg lg:text-xl font-bold text-gray-500 mb-4 self-start pt-6">
 						CONTACTATE AHORA VÍA MAIL
 					</h6>
-					<h4 className="text-3xl lg:text-5xl font-extrabold text-gray-800 self-start pt-6">
+					<h4 className="text-3xl lg:text-5xl font-extrabold mb-4 text-gray-800 self-start pt-6">
 						Hacé tu consulta
 					</h4>
 					<p className="text-lg lg:text-xl text-gray-500 pt-6 mb-4 self-start">
 						Te responderemos al medio indicado.
 					</p>
-					<span className=" w-full border-t border-gray-400 lg:mt-[300px]"></span>
+					{/* <span className=" w-full border-t border-gray-400 lg:mb-[300px]"></span> */}
 				</div>
 				<div className="flex">
 					<form

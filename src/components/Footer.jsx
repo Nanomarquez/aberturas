@@ -1,10 +1,10 @@
-import LogoImg from '../../public/images/Logo-_Tecno_Aberturas_DC__2_-removebg-preview.png';
+import LogoImg from '/images/Logo-_Tecno_Aberturas_DC__2_-removebg-preview.png';
 import { FaFacebook, FaInstagram } from 'react-icons/fa';
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-white">
-      <div className="container mx-auto  flex flex-wrap justify-between items-center">
+    <footer className="bg-gray-900 text-white py-5">
+      <div className="container mx-auto  flex flex-wrap justify-between items-center ">
         <div className="w-full md:w-auto mb-10 md:mb-0">
           <img
             src={LogoImg}
@@ -59,7 +59,7 @@ export default function Footer() {
       </div>
       <hr className="border-gray-700 my-10" />
       <div className="container mx-auto text-center">
-        <p className="text-sm pb-4">
+        <p className="text-sm">
           © 2023 Tecno Aberturas DC | Fábrica de Aberturas a Medida
         </p>
       </div>
