@@ -15,10 +15,26 @@
 	box-shadow: 0px 16px 26px 0px rgba(0,0,0,0.41);
 }
 
+
+
 .nav-container a {
 	color: white;
 	text-decoration: none;
-	margin-right: 1rem;
+}
+
+.nav-container::before{
+	content: '';
+	position: absolute;
+	top: 0;
+	left: -100%;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(90deg,transparent,rgba(255,255,255,.4),transparent);
+	transition: .5s;
+}
+
+.nav-container:hover::before{
+	left:100%;
 }
 
 .links {
@@ -102,7 +118,7 @@
 
 .bg-div.active {
 	border-radius: 0 0 80% 0;
-	top: 0;
+	top: 0px;
 	left: 0;
 	width: 100%;
 	height: 100vh;

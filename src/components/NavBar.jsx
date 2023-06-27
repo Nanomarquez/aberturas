@@ -6,9 +6,9 @@ import LogoImg from '../../public/images/Logo-_Tecno_Aberturas_DC__2_-removebg-p
 import { useState, useEffect, useRef } from 'react';
 
 function Navbar({ clicked, handleClick }) {
-	const [prevScrollPos, setPrevScrollPos] = useState(window.pageYOffset);
-	const [navbarVisible, setNavbarVisible] = useState(true);
-	const navbarRef = useRef(null);
+  const [prevScrollPos, setPrevScrollPos] = useState(window.pageYOffset);
+  const [navbarVisible, setNavbarVisible] = useState(true);
+  const navbarRef = useRef(null);
 
 	const location = useLocation();
 	const navBarColor = location.pathname === '/contacto' ? '#040404' : '#33333354';
@@ -18,46 +18,45 @@ function Navbar({ clicked, handleClick }) {
 			const currentScrollPos = window.pageYOffset;
 			const navbarHeight = navbarRef.current.offsetHeight;
 
-			setNavbarVisible(
-				(prevScrollPos > currentScrollPos && currentScrollPos > navbarHeight) ||
-					currentScrollPos < navbarHeight
-			);
-			setPrevScrollPos(currentScrollPos);
-		};
+      setNavbarVisible(
+        (prevScrollPos > currentScrollPos && currentScrollPos > navbarHeight) ||
+          currentScrollPos < navbarHeight
+      );
+      setPrevScrollPos(currentScrollPos);
+    };
 
-		window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
 
-		return () => {
-			window.removeEventListener('scroll', handleScroll);
-		};
-	}, [prevScrollPos]);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [prevScrollPos]);
 
-	useEffect(() => {
-		const listItem = document.querySelectorAll('#landing-header a');
-		const menuBackDrop = document.querySelector('#menu-backdrop');
+  useEffect(() => {
+    const listItem = document.querySelectorAll("#landing-header a");
+    const menuBackDrop = document.querySelector("#menu-backdrop");
 
-		listItem.forEach((item) => {
-			if (item.id !== 'home')
-				item.addEventListener('mouseenter', () => {
-					const { left, top, width, height } = item.getBoundingClientRect();
+    listItem.forEach((item) => {
+      if (item.id !== "home")
+        item.addEventListener("mouseenter", () => {
+          const { left, top, width, height } = item.getBoundingClientRect();
 
-					menuBackDrop.style.setProperty('--left', `${left}px`);
-					menuBackDrop.style.setProperty('--top', `${top}px`);
-					menuBackDrop.style.setProperty('--width', `${width}px`);
-					menuBackDrop.style.setProperty('--height', `${height}px`);
+          menuBackDrop.style.setProperty("--left", `${left}px`);
+          menuBackDrop.style.setProperty("--top", `${top}px`);
+          menuBackDrop.style.setProperty("--width", `${width}px`);
+          menuBackDrop.style.setProperty("--height", `${height}px`);
 
-					menuBackDrop.style.opacity = '1';
-					menuBackDrop.style.visibility = 'visible';
-				});
+          menuBackDrop.style.opacity = "1";
+          menuBackDrop.style.visibility = "visible";
+        });
 
-			item.addEventListener('mouseleave', () => {
-				menuBackDrop.style.opacity = '0';
-				menuBackDrop.style.visibility = 'hidden';
-			});
-		});
-	}, []);
+      item.addEventListener("mouseleave", () => {
+        menuBackDrop.style.opacity = "0";
+        menuBackDrop.style.visibility = "hidden";
+      });
+    });
+  }, []);
 
-	// console.log(navBarColor)
 	return (
 		<>
 			<div
@@ -67,7 +66,7 @@ function Navbar({ clicked, handleClick }) {
 					transition: 'transform 0.3s ease',
 				}}
 				id="landing-header"
-				className={`nav-container fixed duration-200 ${
+				className={`nav-container fixed duration-300 ${
 					navbarVisible ? '' : 'hiddden'
 				} w-full ${
 					!clicked
@@ -76,11 +75,13 @@ function Navbar({ clicked, handleClick }) {
 				}`}>
 				<Link
 					id="home"
-					to={'/'}>
+					to={'/'}
+          className="z-[9999]"
+          >
 					<img
 						src={LogoImg}
 						alt="Logo img"
-						className=" max-w-[13rem]"
+						className="max-w-[13rem] object-cover z-[9999999]"
 					/>
 				</Link>
 
@@ -118,12 +119,16 @@ function Navbar({ clicked, handleClick }) {
 					<div className="social-links">
 						<a
 							href="https://www.facebook.com/profile.php?id=100090343286715"
-							target="_blank">
+							target="_blank"
+              className="py-2 px-2"
+              >
 							<FaFacebook className="text-6xl sm:text-2xl" />
 						</a>
 						<a
 							href="https://www.instagram.com/tecnoaberturasdc/"
-							target="_blank">
+							target="_blank"
+              className="py-2 px-2"
+              >
 							<FaInstagram className="text-6xl sm:text-2xl" />
 						</a>
 					</div>
@@ -137,15 +142,16 @@ function Navbar({ clicked, handleClick }) {
 				<div className={`bg-div initial ${clicked ? 'active' : ''}`}></div>
 				<div
 					id="menu-backdrop"
-					className={` 
+					className={`
      				absolute bg-slate-300/50 backdrop-blur-lg rounded
     			   translate-x-[var(--left)] translate-y-[var(--top)]
      				left-0 top-0
      				w-[var(--width)] h-[var(--height)]
-      			transition-all duration-500 ease-in-out opacity-0 -z-10`}></div>
-			</div>
-		</>
-	);
+      			transition-all duration-500 ease-in-out opacity-0 -z-10 shadow-md`}
+        ></div>
+      </div>
+    </>
+  );
 }
 
 export default Navbar;
