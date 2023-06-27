@@ -100,10 +100,11 @@ export default function Form() {
 								enableSearch={false}
 								preferredCountries={['ar']}
 								country={'ar'}
+								required
 								// value={userData.telefono}
 								// onChange={handleChange}
 							/>
-							{errors.telefono && <p className="text-red-500">{errors.telefono}</p>}
+							{/* {errors.telefono && <p className="text-red-500">{errors.telefono}</p>} */}
 						</div>
 						<div className="mb-4">
 							<label

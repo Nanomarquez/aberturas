@@ -1,6 +1,6 @@
 export const validation = (user) => {
 	const errors = {};
-	const { nombre, email, localidad, mensaje, telefono } = user;
+	const { nombre, email, localidad, mensaje,} = user;
 
 	if (!nombre) {
 		errors.nombre = 'El nombre es requerido';
@@ -17,9 +17,6 @@ export const validation = (user) => {
 	if (!localidad) {
 		errors.localidad = 'La localidad es requerida';
 	}
-   if (!telefono) {
-      errors.telefono = 'El número de teléfono es requerido'
-   }
 
 	if (!mensaje) {
 		errors.mensaje = 'El mensaje es requerido';
