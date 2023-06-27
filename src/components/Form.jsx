@@ -31,6 +31,7 @@ export default function Form() {
 			Object.prototype.hasOwnProperty.validationErrors('mensaje') ||
 			Object.prototype.hasOwnProperty.validationErrors('telefono')
 		) {
+			// console.log(Object.prototype.hasOwnProperty.validationErrors());
 			return;
 		}
 	};
@@ -39,16 +40,16 @@ export default function Form() {
 		<>
 			<div className=" grid sm:grid-cols-1 lg:grid-cols-2 gap-4 py-[120px] px-[40px] ">
 				<div className="flex flex-col items-center pb-20  justify-evenly">
-					<h6 className=" sm:text-lg lg:text-xl font-bold  text-gray-500 mb-[20px] self-start">
+					<h6 className="text-lg lg:text-xl font-bold text-gray-500 mb-4 self-start pt-6">
 						CONTACTATE AHORA VÍA MAIL
 					</h6>
-					<h4 className="sm:text-3xl lg:text-5xl font-extrabold text-gray-800  self-start">
+					<h4 className="text-3xl lg:text-5xl font-extrabold text-gray-800 self-start pt-6">
 						Hacé tu consulta
 					</h4>
-					<p className=" text-lg text-gray-500 mb-[20px] self-start ">
+					<p className="text-lg lg:text-xl text-gray-500 pt-6 mb-4 self-start">
 						Te responderemos al medio indicado.
 					</p>
-					<span className=" w-full border-t border-gray-400"></span>
+					<span className=" w-full border-t border-gray-400 lg:mt-[300px]"></span>
 				</div>
 				<div className="flex">
 					<form
@@ -99,10 +100,11 @@ export default function Form() {
 								enableSearch={false}
 								preferredCountries={['ar']}
 								country={'ar'}
-								value={userData.nombre}
-								onChange={handleChange}
+								required
+								// value={userData.telefono}
+								// onChange={handleChange}
 							/>
-							{errors.telefono && <p className="text-red-500">{errors.telefono}</p>}
+							{/* {errors.telefono && <p className="text-red-500">{errors.telefono}</p>} */}
 						</div>
 						<div className="mb-4">
 							<label

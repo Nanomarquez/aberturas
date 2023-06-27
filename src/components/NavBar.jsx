@@ -15,7 +15,7 @@ function Navbar({ clicked, handleClick }) {
   const [navBarColor, setNavBarColor] = useState("#33333354");
 
   useEffect(() => {
-    console.log(location.pathname == '/contacto');
+   //  console.log(location.pathname == '/contacto');
     if (location.pathname == "/contacto") {
       setNavBarColor("#040404");
     } else {
@@ -23,8 +23,8 @@ function Navbar({ clicked, handleClick }) {
     }
   }, [location.pathname]);
 
-  console.log(location.pathname);
-	console.log(navBarColor)
+//   console.log(location.pathname);
+	// console.log(navBarColor)
 
   useEffect(() => {
     const handleScroll = () => {
