@@ -2,7 +2,7 @@ import "./NavBar.css";
 import { Link, useLocation } from "react-router-dom";
 import { FaFacebook, FaInstagram } from "react-icons/fa";
 import BurguerButton from "./BurguerButton";
-import LogoImg from "../../public/images/Logo-_Tecno_Aberturas_DC__2_-removebg-preview.png";
+import LogoImg from "/images/Logo-_Tecno_Aberturas_DC__2_-removebg-preview.png";
 import { useState, useEffect, useRef } from "react";
 
 function Navbar({ clicked, handleClick }) {
@@ -88,7 +88,7 @@ function Navbar({ clicked, handleClick }) {
             : "bg-transparent"
         }`}
       >
-        <Link id="home" to={"/"} className="z-[9999]">
+        <Link id="home" to={"/"} className="z-[9999] ml-2">
           <img
             src={LogoImg}
             alt="Logo img"

@@ -1,11 +1,11 @@
-import img1 from "../../public/images/339101016_5799821736793996_4235762734985220392_n (1).jpg";
-import img2 from "../../public/images/barandas-edificios.jpg";
-import img3 from "../../public/images/FB_IMG_1685797806539.jpg";
-import img4 from "../../public/images/portada-cerramientos.jpg";
-import img5 from "../../public/images/r-architecture-updbdgKxp5k-unsplash-scaled.jpg";
-import img6 from "../../public/images/r-architecture-Y8MJFQYYjh8-unsplash.jpg";
-import img7 from "../../public/images/tecnoaberturasdc.jpg";
-import img8 from "../../public/images/zane-lee-ECsnJcc0Dhs-unsplash-scaled.jpg";
+import img1 from "/images/339101016_5799821736793996_4235762734985220392_n (1).jpg";
+import img2 from "/images/barandas-edificios.jpg";
+import img3 from "/images/FB_IMG_1685797806539.jpg";
+import img4 from "/images/portada-cerramientos.jpg";
+import img5 from "/images/r-architecture-updbdgKxp5k-unsplash-scaled.jpg";
+import img6 from "/images/r-architecture-Y8MJFQYYjh8-unsplash.jpg";
+import img7 from "/images/tecnoaberturasdc.jpg";
+import img8 from "/images/zane-lee-ECsnJcc0Dhs-unsplash-scaled.jpg";
 
 export default function Obras() {
   
@@ -22,7 +22,7 @@ export default function Obras() {
 
   return (
     <>
-    <div className={`h-screen bg-[url("../../public/images/tecnoaberturasdc.jpg")] bg-cover flex flex-col justify-center items-center gap-10 text-white`}>
+    <div className={`h-screen bg-[url("/images/tecnoaberturasdc.jpg")] bg-cover flex flex-col justify-center items-center gap-10 text-white`}>
       <p>FÁBRICA DE ABERTURAS A MEDIDA EN PILAR</p>
       <h2 className="text-5xl font-bold">Nuestras Obras</h2>
     </div>

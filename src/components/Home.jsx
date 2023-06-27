@@ -1,9 +1,10 @@
-import './Button.css';
-import { Parallax } from 'react-parallax';
-import bg from '../../public/images/tecnoaberturasdc.jpg';
-import bgMobile from '../../public/images/r-architecture-updbdgKxp5k-unsplash-scaled.jpg';
-import bg2 from '../../public/images/339101016_5799821736793996_4235762734985220392_n (1).jpg';
-import bgMobile2 from '../../public/images/barandas-edificios.jpg';
+import "./Button.css";
+import { Parallax } from "react-parallax";
+import bg from "/images/tecnoaberturasdc.jpg";
+import bgMobile from "/images/r-architecture-updbdgKxp5k-unsplash-scaled.jpg";
+import bg2 from "/images/339101016_5799821736793996_4235762734985220392_n (1).jpg";
+import bgMobile2 from "/images/barandas-edificios.jpg";
+
 import { isMobile } from 'react-device-detect';
 import { Link } from 'react-router-dom';
 
