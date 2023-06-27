@@ -8,6 +8,7 @@ import img7 from "../../public/images/tecnoaberturasdc.jpg";
 import img8 from "../../public/images/zane-lee-ECsnJcc0Dhs-unsplash-scaled.jpg";
 
 export default function Obras() {
+  
   const data = [
     { src: img1 },
     { src: img2 },
