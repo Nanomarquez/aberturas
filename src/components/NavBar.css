@@ -8,18 +8,11 @@
 	align-items: center;
 	justify-content: space-between;
 	z-index: 15;
-<<<<<<< HEAD
 	max-height: 5rem;
 	/* background: linear-gradient(135deg, rgba(87, 87, 87, 0.295), rgba(255, 255, 255, 0));
 	backdrop-filter: blur(10px);
 	-webkit-backdrop-filter: blur(10px); */
 	box-shadow: 0px 16px 26px 0px rgba(0,0,0,0.41);
-=======
-	/* background: linear-gradient(135deg, rgba(87, 87, 87, 0.295), rgba(255, 255, 255, 0));
-	backdrop-filter: blur(10px);
-	-webkit-backdrop-filter: blur(10px); */
-	/* box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37); */
->>>>>>> d296279118dd4ce0e9f56411afc37bb3796d63ae
 }
 
 
