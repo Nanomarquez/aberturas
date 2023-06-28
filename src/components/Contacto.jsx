@@ -1,6 +1,11 @@
+import Form from './Form';
 
 export default function Contacto() {
-  return (
-    <div>Contacto</div>
-  )
+	return (
+		<>
+			<div className={`bg-[#ECECEC]`}>
+				<Form />
+			</div>
+		</>
+	);
 }

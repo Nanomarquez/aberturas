@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Header from './components/NavBar';
 import Home from './components/Home';
@@ -6,14 +6,22 @@ import Obras from './components/Obras';
 import Productos from './components/Productos';
 import Nosotros from './components/Nosotros';
 import Contacto from './components/Contacto';
+import Footer from './components/Footer';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 function App() {
-	
 	const [clicked, setClicked] = React.useState(false);
 	const handleClick = () => {
-		//cuando esta true lo pasa a false y vice versa
-		setClicked(!clicked);
+		if (window.innerWidth < 768) {
+			//cuando esta true lo pasa a false y vice versa
+			setClicked(!clicked);
+		}
 	};
+
+	useEffect(() => {
+		AOS.init();
+	}, []);
 
 	return (
 		<>
@@ -24,7 +32,7 @@ function App() {
 			<Routes>
 				<Route
 					path="/"
-					element={<Home clicked={clicked} />}
+					element={<Home />}
 				/>
 				<Route
 					path="/productos"
@@ -43,6 +51,7 @@ function App() {
 					element={<Contacto />}
 				/>
 			</Routes>
+			<Footer></Footer>
 		</>
 	);
 }

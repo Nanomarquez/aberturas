@@ -8,17 +8,33 @@
 	align-items: center;
 	justify-content: space-between;
 	z-index: 15;
-
-	background: linear-gradient(135deg, rgba(87, 87, 87, 0.295), rgba(255, 255, 255, 0));
+	max-height: 5rem;
+	/* background: linear-gradient(135deg, rgba(87, 87, 87, 0.295), rgba(255, 255, 255, 0));
 	backdrop-filter: blur(10px);
-	-webkit-backdrop-filter: blur(10px);
-	box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+	-webkit-backdrop-filter: blur(10px); */
+	box-shadow: 0px 16px 26px 0px rgba(0,0,0,0.41);
 }
+
+
 
 .nav-container a {
 	color: white;
 	text-decoration: none;
-	margin-right: 1rem;
+}
+
+.nav-container::before{
+	content: '';
+	position: absolute;
+	top: 0;
+	left: -100%;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(90deg,transparent,rgba(255,255,255,.4),transparent);
+	transition: .5s;
+}
+
+.nav-container:hover::before{
+	left:100%;
 }
 
 .links {
@@ -50,7 +66,7 @@
 		height: 70px;
 	}
 	.links a {
-		font-size: 1rem;
+		font-size: 18px;
 		color: white;
 		display: inline;
 	}
@@ -69,7 +85,7 @@
 	width: 100%;
 	display: flex;
 	flex-direction: column;
-	justify-content: space-around;
+	justify-content: center;
 	position: absolute;
 	margin-left: auto;
 	margin-right: auto;
@@ -94,7 +110,6 @@
 	height: 100vh;
 	z-index: 10;
 	transition: all 0.6s ease;
-
 	background: linear-gradient(135deg, rgba(112, 112, 112, 0.473), rgba(255, 255, 255, 0));
 	backdrop-filter: blur(10px);
 	-webkit-backdrop-filter: blur(10px);
@@ -103,7 +118,7 @@
 
 .bg-div.active {
 	border-radius: 0 0 80% 0;
-	top: 0;
+	top: 0px;
 	left: 0;
 	width: 100%;
 	height: 100vh;
@@ -113,6 +128,6 @@
 
 .social-links {
 	display: flex;
-	justify-content: start;
+	justify-content: flex-start;
 	margin-left: 20px;
 }
