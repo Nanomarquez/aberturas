@@ -4,6 +4,7 @@
 @tailwind utilities;
 
 * {
+<<<<<<< HEAD
   font-family: "Lato", sans-serif;
   padding: 0;
   margin: 0;
@@ -97,3 +98,26 @@ img {
     -webkit-text-stroke: 4px black;
   }
 }
+=======
+   font-family: "Lato", sans-serif;
+   padding: 0;
+   margin: 0;
+   scroll-behavior: smooth;
+}
+
+body::-webkit-scrollbar {
+   width: 1em;
+ }
+  
+ body::-webkit-scrollbar-track {
+   box-shadow: inset 0 0 6px rgba(0, 0, 0, 1);
+ }
+  
+ body::-webkit-scrollbar-thumb {
+   background-color: darkgrey;
+ }
+
+ img{
+  background-size: cover;
+ }
+>>>>>>> d296279118dd4ce0e9f56411afc37bb3796d63ae

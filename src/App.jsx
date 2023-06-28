@@ -6,7 +6,10 @@ import Obras from './components/Obras';
 import Productos from './components/Productos';
 import Nosotros from './components/Nosotros';
 import Contacto from './components/Contacto';
+<<<<<<< HEAD
 import Footer from './components/Footer';
+=======
+>>>>>>> d296279118dd4ce0e9f56411afc37bb3796d63ae
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
@@ -21,7 +24,11 @@ function App() {
 
 	useEffect(() => {
 		AOS.init();
+<<<<<<< HEAD
 	}, []);
+=======
+	}, [])
+>>>>>>> d296279118dd4ce0e9f56411afc37bb3796d63ae
 
 	return (
 		<>
