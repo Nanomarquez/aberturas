@@ -1,14 +1,15 @@
-import { useState } from 'react';
-import { validation } from './formValidation';
-import PhoneInput from 'https://cdn.skypack.dev/react-phone-input-2@2.15.1';
+import emailjs from '@emailjs/browser';
+import { useState, useRef } from 'react';
 
 export default function Form() {
+	const form = useRef();
+
 	const [userData, setUserData] = useState({
-		nombre: '',
-		email: '',
-		localidad: '',
-		mensaje: '',
-		telefono: '',
+		user_name: '',
+		user_email: '',
+		user_localidad: '',
+		message: '',
+		user_phone: '',
 	});
 
 	const handleChange = (event) => {
@@ -18,23 +19,28 @@ export default function Form() {
 		});
 	};
 
-	const [errors, setErrors] = useState({});
-
-	const handleSubmit = (event) => {
-		event.preventDefault();
-		const validationErrors = validation(userData);
-		setErrors(validationErrors);
-		if (
-			Object.prototype.hasOwnProperty.validationErrors('nombre') ||
-			Object.prototype.hasOwnProperty.validationErrors('email') ||
-			Object.prototype.hasOwnProperty.validationErrors('localidad') ||
-			Object.prototype.hasOwnProperty.validationErrors('mensaje') ||
-			Object.prototype.hasOwnProperty.validationErrors('telefono')
-		) {
-			// console.log(Object.prototype.hasOwnProperty.validationErrors());
-			return;
-		}
+	const sendEmail = () => {
+		emailjs
+			.sendForm('service_esteb9h', 'template_wi8riyg', form.current, 'btdakFXCbv_wuqY7F')
+			.then(
+				(result) => {
+					console.log(result.text);
+					form.current.reset();
+				},
+				(error) => {
+					console.log(error.text);
+				}
+			);
 	};
+
+	const buttonClass =
+		userData.user_email.length < 1 ||
+		userData.user_name.length < 1 ||
+		userData.user_phone.length < 1 ||
+		userData.user_localidad.length < 1 ||
+		userData.message.length < 1
+			? 'opacity-50 cursor-not-allowed'
+			: '';
 
 	return (
 		<>
@@ -49,79 +55,78 @@ export default function Form() {
 					<p className="text-lg lg:text-xl text-gray-500 pt-6 mb-4 self-start">
 						Te responderemos al medio indicado.
 					</p>
-					{/* <span className=" w-full border-t border-gray-400 lg:mb-[300px]"></span> */}
 				</div>
 				<div className="flex">
 					<form
-						onSubmit={handleSubmit}
+						ref={form}
+						onSubmit={sendEmail}
 						className="w-full max-w-lg mx-auto">
 						<div className="mb-4">
 							<label
-								htmlFor="nombre"
+								htmlFor="user_name"
 								className="block text-gray-700 font-bold mb-2">
 								Nombre
 							</label>
 							<input
 								className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:border-black"
-								name="nombre"
-								id="nombre"
+								name="user_name"
+								id="user_name"
 								type="text"
-								value={userData.nombre}
+								value={userData.user_name}
 								onChange={handleChange}
 								placeholder="Ingrese su nombre"
+								required
 							/>
-							{errors.nombre && <p className="text-red-500">{errors.nombre}</p>}
 						</div>
 						<div className="mb-4">
 							<label
-								htmlFor="email"
+								htmlFor="user_email"
 								className="block text-gray-700 font-bold mb-2">
 								Email
 							</label>
 							<input
 								className="focus:border-black shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-								name="email"
-								id="email"
-								type="text"
-								value={userData.email}
+								name="user_email"
+								id="user_email"
+								type="email"
+								value={userData.user_email}
 								onChange={handleChange}
 								placeholder="Ingrese su Email"
+								required
 							/>
-							{errors.email && <p className="text-red-500">{errors.email}</p>}
 						</div>
 						<div className="mb-4">
 							<label
-								htmlFor="telefono"
+								htmlFor="user_phone"
 								className="block text-gray-700 font-bold mb-2">
 								Teléfono
 							</label>
-							<PhoneInput
+							<input
 								className="focus:border-black shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight   "
-								enableSearch={false}
-								preferredCountries={['ar']}
-								country={'ar'}
+								name="user_phone"
+								type="tel"
+								placeholder="Ingrese su teléfono"
 								required
-								// value={userData.telefono}
-								// onChange={handleChange}
+								value={userData.user_phone}
+								onChange={handleChange}
 							/>
-							{/* {errors.telefono && <p className="text-red-500">{errors.telefono}</p>} */}
 						</div>
 						<div className="mb-4">
 							<label
-								htmlFor="localidad"
+								htmlFor="user_localidad"
 								className="block text-gray-700 font-bold mb-2">
 								Localidad
 							</label>
 							<input
 								className="focus:border-black shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-								name="localidad"
+								name="user_localidad"
 								id="localidad"
 								type="text"
-								value={userData.password}
+								value={userData.user_localidad}
 								onChange={handleChange}
 								placeholder="Ingrese su localidad"
+								required
 							/>
-							{errors.localidad && <p className="text-red-500">{errors.localidad}</p>}
 						</div>
 						<div className="mb-4">
 							<label
@@ -130,20 +135,27 @@ export default function Form() {
 								Mensaje
 							</label>
 							<textarea
-								name="mensaje"
-								id="mensaje"
+								className="focus:border-black shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+								name="message"
+								id="message"
 								type="text"
-								value={userData.mensaje}
+								value={userData.message}
 								onChange={handleChange}
 								placeholder="Ingrese su presupuesto deseado"
-								className="focus:border-black shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
 							/>
-							{errors.mensaje && <p className="text-red-500">{errors.mensaje}</p>}
 						</div>
 						<button
+							value="COTICE AHORA"
 							type="submit"
-							className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
-							Enviar
+							className={`bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline ${buttonClass}`}
+							disabled={
+								userData.user_email.length < 1 ||
+								userData.user_name.length < 1 ||
+								userData.user_phone.length < 1 ||
+								userData.user_localidad.length < 1 ||
+								userData.message.length < 1
+							}>
+							COTICE AHORA
 						</button>
 					</form>
 				</div>
