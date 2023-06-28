@@ -15,7 +15,7 @@ function Navbar({ clicked, handleClick }) {
   const [navBarColor, setNavBarColor] = useState("#33333354");
 
   useEffect(() => {
-   //  console.log(location.pathname == '/contacto');
+    //  console.log(location.pathname == '/contacto');
     if (location.pathname == "/contacto") {
       setNavBarColor("#040404");
     } else {
@@ -23,8 +23,8 @@ function Navbar({ clicked, handleClick }) {
     }
   }, [location.pathname]);
 
-//   console.log(location.pathname);
-	// console.log(navBarColor)
+  //   console.log(location.pathname);
+  // console.log(navBarColor)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -70,6 +70,16 @@ function Navbar({ clicked, handleClick }) {
     });
   }, []);
 
+  const [hover, setHover] = useState(false);
+  const handleHoverActive = () => {
+    setHover(true);
+  };
+  const handleHoverFalse = () => {
+    setHover(false);
+  };
+
+  console.log(navBarColor)
+
   return (
     <>
       <div
@@ -77,15 +87,13 @@ function Navbar({ clicked, handleClick }) {
         style={{
           transform: `translateY(${navbarVisible ? "0" : "-100px"})`,
           transition: "transform 0.3s ease",
-					backgroundColor:navBarColor
+          backgroundColor: navBarColor,
         }}
         id="landing-header"
         className={`nav-container fixed duration-300 ${
           navbarVisible ? "" : "hiddden"
         } w-full ${
-          !clicked
-            ? `backdrop-blur-sm drop-shadow-sm`
-            : "bg-transparent"
+          !clicked ? `backdrop-blur-sm drop-shadow-sm` : "bg-transparent"
         }`}
       >
         <Link id="home" to={"/"} className="z-[9999] ml-2">
@@ -105,11 +113,28 @@ function Navbar({ clicked, handleClick }) {
             INICIO
           </Link>
           <Link
-            className="drop-shadow-lg font-semibold py-1 px-2"
+            className="drop-shadow-lg font-semibold py-1 px-2 relative"
             to={"/productos"}
             onClick={handleClick}
+            onMouseEnter={handleHoverActive}
+            onMouseLeave={handleHoverFalse}
           >
             PRODUCTOS
+            <div
+              style={{ backgroundColor: "#000" }}
+              className={`backdrop-blur-sm productos z-[99999999999999999999999999] w-[120%] -left-[10%] absolute transition-transform duration-300 ${
+                hover ? "translate-y-[25px]" : "-translate-y-[200%]"
+              }`}
+            >
+              <ul className="flex flex-col gap-5 my-5">
+                <li>Hola</li>
+                <li>Chau</li>
+                <li>asdasd</li>
+                <li>asdasd</li>
+                <li>asdasd</li>
+                <li>asd</li>
+              </ul>
+            </div>
           </Link>
           <Link
             className="drop-shadow-lg font-semibold py-1 px-2"
