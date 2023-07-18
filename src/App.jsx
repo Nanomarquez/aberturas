@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import Header from './components/NavBar';
-import Home from './components/Home';
-import Obras from './components/Obras';
-import Productos from './components/Productos';
-import Nosotros from './components/Nosotros';
-import Contacto from './components/Contacto';
-import Footer from './components/Footer';
+import Header from './components/Navbar/NavBar';
+import Home from './pages/Home';
+import Obras from './pages/Obras';
+import Productos from './pages/Productos';
+import Nosotros from './pages/Nosotros';
+import Contacto from './pages/Contacto';
+// import Footer from './components/Footer/Footer';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
@@ -51,7 +51,6 @@ function App() {
 					element={<Contacto />}
 				/>
 			</Routes>
-			<Footer></Footer>
 		</>
 	);
 }
