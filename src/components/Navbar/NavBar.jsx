@@ -4,6 +4,7 @@ import { FaFacebook, FaInstagram } from 'react-icons/fa';
 import BurguerButton from '../BurguerButtom/BurguerButton';
 import LogoImg from '/images/Logo-_Tecno_Aberturas_DC__2_-removebg-preview.png';
 import { useState, useEffect, useRef } from 'react';
+import { isMobile } from 'react-device-detect';
 
 function Navbar({ clicked, handleClick }) {
 	const [prevScrollPos, setPrevScrollPos] = useState(window.pageYOffset);
@@ -70,6 +71,11 @@ function Navbar({ clicked, handleClick }) {
 		});
 	}, []);
 
+	const handleLinkClick = () => {
+		// Close the menu when a Link is clicked
+		handleClick(false);
+	};
+
 	return (
 		<>
 			<div
@@ -96,53 +102,63 @@ function Navbar({ clicked, handleClick }) {
 
 				<div className={`links ${clicked ? 'active' : ''} gap-7`}>
 					<Link
-						className="drop-shadow-lg font-semibold py-1 px-2"
+						className="drop-shadow-lg font-semibold py-1 px-2   "
 						to={'/'}
-						onClick={handleClick}>
+						onClick={handleLinkClick}>
 						INICIO
 					</Link>
-					<div className="mx-auto flex h-screen w-full items-center justify-center bg-transparent py-20">
+					<div className="mx-auto flex w-full items-center justify-center bg-transparent ">
 						<div className="group relative cursor-pointer py-2">
 							<div className="flex items-center justify-between space-x-5 bg-transparent px-4">
 								<Link
-									to={'/productos'}
-									className="menu-hover my-2 py-2 text-base font-semibold text-black lg:mx-4"
-									onClick="">
+									// to={'/productos'}
+									className="menu-hover my-2 py-2 text-base font-semibold text-black lg:mx-4">
 									PRODUCTOS
 								</Link>
 							</div>
-							<div
-								className="invisible absolute z-50 flex w-full flex-col bg-transparent py-1 px-4 text-gray-800 shadow-xl group-hover:visible"
-								onClick="">
+
+							<div className="invisible absolute z-50 flex  flex-col backdrop-blur-xl drop-shadow-sm  py-1 px-4 text-gray-800 shadow-xl group-hover:visible w-fit">
 								<Link
-									to={'/productos'}
-									className="my-2 block border-b border-gray-100 py-1 font-semibold text-gray-500 hover:text-black md:mx-2">
+									to={'/aberturas-products'}
+									className="my-2 block border-b blur-0 border-gray-100 py-1 font-semibold text-gray-500  md:mx-2"
+									onClick={handleLinkClick}>
 									ABERTURAS
+								</Link>
+								<Link
+									to={'/cerramientos-products'}
+									className="my-2 block border-b  border-gray-100 py-1 font-semibold text-gray-500  md:mx-2"
+									onClick={handleLinkClick}>
+									CERRAMIENTOS
 								</Link>
 
 								<Link
-									to={'/productos'}
-									className="my-2 block border-b border-gray-100 py-1 font-semibold text-gray-500 hover:text-black md:mx-2">
+									to={'/pergolas-products'}
+									className="my-2 block border-b border-gray-100 py-1 font-semibold text-gray-500  md:mx-2"
+									onClick={handleLinkClick}>
 									PÉRGOLAS
 								</Link>
 								<Link
-									to={'/productos'}
-									className="my-2 block border-b border-gray-100 py-1 font-semibold text-gray-500 hover:text-black md:mx-2">
+									to={'/mamparas-barandas-herreria-products'}
+									className="my-2 block border-b border-gray-100 py-1 font-semibold text-gray-500  md:mx-2"
+									onClick={handleLinkClick}>
 									MAMPARAS
 								</Link>
 								<Link
-									to={'/productos'}
-									className="my-2 block border-b border-gray-100 py-1 font-semibold text-gray-500 hover:text-black md:mx-2">
+									to={'/mamparas-barandas-herreria-products'}
+									className="my-2 block border-b border-gray-100 py-1 font-semibold text-gray-500  md:mx-2"
+									onClick={handleLinkClick}>
 									BARANDAS
 								</Link>
 								<Link
-									to={'/productos'}
-									className="my-2 block border-b border-gray-100 py-1 font-semibold text-gray-500 hover:text-black md:mx-2">
+									to={'/cortinas-products'}
+									className="my-2 block border-b border-gray-100 py-1 font-semibold text-gray-500  md:mx-2"
+									onClick={handleLinkClick}>
 									CORTINAS ROLLER
 								</Link>
 								<Link
-									to={'/productos'}
-									className="my-2 block border-b border-gray-100 py-1 font-semibold text-gray-500 hover:text-black md:mx-2">
+									to={'/mamparas-barandas-herreria-products'}
+									className="my-2 block border-b border-gray-100 py-1 font-semibold text-gray-500 md:mx-2"
+									onClick={handleLinkClick}>
 									HERRERÍA
 								</Link>
 							</div>
@@ -150,19 +166,25 @@ function Navbar({ clicked, handleClick }) {
 					</div>
 
 					<Link
-						className="drop-shadow-lg font-semibold py-1 px-2"
+						className={`drop-shadow-lg font-semibold py-1 px-2 ${
+							isMobile ? 'navbar-small-screen-hover' : ''
+						}`}
 						to={'/nosotros'}
 						onClick={handleClick}>
 						NOSOTROS
 					</Link>
 					<Link
-						className="drop-shadow-lg font-semibold py-1 px-2"
+						className={`drop-shadow-lg font-semibold py-1 px-2 ${
+							isMobile ? 'navbar-small-screen-hover' : ''
+						}`}
 						to={'/obras'}
 						onClick={handleClick}>
 						OBRAS
 					</Link>
 					<Link
-						className="drop-shadow-lg font-semibold py-1 px-2"
+						className={`drop-shadow-lg font-semibold py-1 px-2 ${
+							isMobile ? 'navbar-small-screen-hover' : ''
+						}`}
 						to={'/contacto'}
 						onClick={handleClick}>
 						CONTACTO
@@ -173,13 +195,13 @@ function Navbar({ clicked, handleClick }) {
 							href="https://www.facebook.com/profile.php?id=100090343286715"
 							target="_blank"
 							className="py-2 px-2">
-							<FaFacebook className="text-6xl sm:text-2xl" />
+							<FaFacebook className="lg:text-3xl text-[4rem]" />
 						</a>
 						<a
 							href="https://www.instagram.com/tecnoaberturasdc/"
 							target="_blank"
 							className="py-2 px-2">
-							<FaInstagram className="text-6xl sm:text-2xl" />
+							<FaInstagram className="lg:text-3xl text-[4rem]" />
 						</a>
 					</div>
 				</div>
@@ -190,14 +212,16 @@ function Navbar({ clicked, handleClick }) {
 					/>
 				</div>
 				<div className={`bg-div initial ${clicked ? 'active' : ''}`}></div>
-				<div
-					id="menu-backdrop"
-					className={`
-     				absolute bg-slate-300/50 backdrop-blur-lg rounded
-    			   translate-x-[var(--left)] translate-y-[var(--top)]
-     				left-0 top-0
-     				w-[var(--width)] h-[var(--height)]
-      			transition-all duration-500 ease-in-out opacity-0 -z-10 shadow-md`}></div>
+				{!isMobile && (
+					<div
+						id="menu-backdrop"
+						className={`
+						  absolute bg-slate-300/50 backdrop-blur-lg rounded
+						 translate-x-[var(--left)] translate-y-[var(--top)]
+						  left-0 top-0
+						  w-[var(--width)] h-[var(--height)]
+						transition-all duration-500 ease-in-out opacity-0 z-0 shadow-md`}></div>
+				)}
 			</div>
 		</>
 	);

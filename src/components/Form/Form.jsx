@@ -23,11 +23,11 @@ export default function Form() {
 
 		const phoneNumber = '+5491136737281'; // Número de teléfono al que se enviará el mensaje
 		const message = `¡Hola! Me gustaría obtener más información.
-	Nombre: ${userData.user_name}
-	Email: ${userData.user_email}
-	Teléfono: ${userData.user_phone}
-	Localidad: ${userData.user_localidad}
-	Mensaje: ${userData.message}`;
+	- Nombre: *${userData.user_name}*
+	- Email: ${userData.user_email}
+	- Teléfono: ${userData.user_phone}
+	- Localidad: *${userData.user_localidad}*
+	- Mensaje: *${userData.message}*`;
 
 		const encodedMessage = encodeURIComponent(message);
 		const whatsappLink = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodedMessage}`;
@@ -50,7 +50,7 @@ export default function Form() {
 			<div className=" grid sm:grid-cols-1 lg:grid-cols-2 gap-4 pt-[120px] pb-[60px] px-[40px] ">
 				<div className="flex flex-col items-center justify-evenly">
 					<h6 className="text-lg lg:text-xl font-bold text-gray-500 mb-4 self-start pt-6">
-						CONTACTATE AHORA VÍA MAIL
+						CONTACTATE AHORA VÍA WHATSAPP
 					</h6>
 					<h4 className="text-3xl lg:text-5xl font-extrabold mb-4 text-gray-800 self-start pt-6">
 						Hacé tu consulta

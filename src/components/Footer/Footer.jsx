@@ -50,11 +50,9 @@ export default function Footer() {
             Horario de atención
           </p>
           <p className="text-sm text-center md:text-left">
-            Lunes a Viernes: 9:00 a 18:00 hs
+            Lunes a Viernes: 8:00 a 17:00 hs
           </p>
-          <p className="text-sm text-center md:text-left">
-            Sábados: 9:00 a 13:00 hs
-          </p>
+          
         </div>
       </div>
       <hr className="border-gray-700 my-10" />

@@ -131,3 +131,10 @@
 	justify-content: flex-start;
 	margin-left: 20px;
 }
+
+
+/* Estilo de desenfoque para el menú backdrop */
+.backdrop-blur {
+	backdrop-filter: blur(8px); /* Ajusta el valor según el nivel de desenfoque deseado */
+	transition: backdrop-filter 0.3s; /* Agrega una transición suave */
+ }
