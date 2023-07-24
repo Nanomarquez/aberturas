@@ -26,7 +26,7 @@ function SwiperSlider() {
 				className="heading text-gray-800"
 				data-aos-duration="1000"
 				data-aos="fade-up">
-				Explora todos nuestros productos
+				Explorá todos nuestros productos
 			</h2>
 			<Swiper
 				effect={'coverflow'}

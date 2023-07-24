@@ -62,14 +62,14 @@ function Home({ clicked }) {
 								<h4
 									data-aos-duration="1000"
 									data-aos="zoom-in"
-									className=" pb-4 text-[25px] max-w-sm lg:text-5xl drop-shadow-md font-bold text-[#040404] lg:text-white lg:max-w-2xl ">
+									className=" pb-4 text-[25px] max-w-sm lg:text-5xl drop-shadow-md font-extrabold text-gray-900 lg:max-w-2xl ">
 									CREAMOS EL AMBIENTE QUE MERECES PARA TU HOGAR
 								</h4>
 								<ul className="text-2xl mt-14 lg:mt-10 lg:text-3xl drop-shadow-md font-bold  lg:mt-20 bg-gradient-blue-teal custom-list">
-									<li className=" my-1 font-semibold text-[#040404]">TECNOLOGIA</li>
-									<li className=" my-1 text-[#040404]">CALIDAD</li>
-									<li className=" my-1 text-[#040404]">SEGURIDAD</li>
-									<li className=" my-1 text-[#040404]">CONFORT</li>
+									<li className=" my-1 text-gray-900">TECNOLOGIA</li>
+									<li className=" my-1 text-gray-900">CALIDAD</li>
+									<li className=" my-1 text-gray-900">SEGURIDAD</li>
+									<li className=" my-1 text-gray-900">CONFORT</li>
 								</ul>
 								<Link to={'/contacto'}>
 									<button
