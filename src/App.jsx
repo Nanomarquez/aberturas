@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import Header from './components/NavBar';
-import Home from './components/Home';
-import Obras from './components/Obras';
+import Header from './components/NavBar/NavBar';
+import Obras from './pages/Obras/Obras';
 // import Productos from './components/Productos';
-import Nosotros from './components/Nosotros';
-import Contacto from './components/Contacto';
+import Nosotros from './pages/Nosotros/Nosotros';
+import Contacto from './pages/Contacto/Contacto';
 // import Footer from './components/Footer';
+import Home from "./pages/Home/Home"
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Aberturas from './pages/Aberturas/Aberturas';
