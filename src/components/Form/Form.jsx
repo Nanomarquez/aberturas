@@ -1,4 +1,5 @@
-import { useState, useRef, } from 'react';
+import emailjs from '@emailjs/browser';
+import { useState, useRef } from 'react';
 
 export default function Form() {
 	const form = useRef();
@@ -19,21 +20,17 @@ export default function Form() {
 	};
 
 	const sendEmail = () => {
-		event.preventDefault();
-
-		const phoneNumber = '+5491136737281'; // Número de teléfono al que se enviará el mensaje
-		const message = `¡Hola! Me gustaría obtener más información.
-	- Nombre: *${userData.user_name}*
-	- Email: ${userData.user_email}
-	- Teléfono: ${userData.user_phone}
-	- Localidad: *${userData.user_localidad}*
-	- Mensaje: *${userData.message}*`;
-
-		const encodedMessage = encodeURIComponent(message);
-		const whatsappLink = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodedMessage}`;
-
-		// Redirigir al enlace de WhatsApp
-		window.location.href = whatsappLink;
+		emailjs
+			.sendForm('service_esteb9h', 'template_wi8riyg', form.current, 'btdakFXCbv_wuqY7F')
+			.then(
+				(result) => {
+					console.log(result.text);
+					form.current.reset();
+				},
+				(error) => {
+					console.log(error.text);
+				}
+			);
 	};
 
 	const buttonClass =
@@ -147,7 +144,7 @@ export default function Form() {
 								placeholder="Ingrese su presupuesto deseado"
 							/>
 						</div>
-						
+
 						<button
 							value="COTICE AHORA"
 							type="submit"
