@@ -12,7 +12,7 @@
 	/* background: linear-gradient(135deg, rgba(87, 87, 87, 0.295), rgba(255, 255, 255, 0));
 	backdrop-filter: blur(10px);
 	-webkit-backdrop-filter: blur(10px); */
-	box-shadow: 0px 16px 26px 0px rgba(0,0,0,0.41);
+	box-shadow: 0px 16px 26px 0px rgba(0, 0, 0, 0.41);
 }
 
 
@@ -22,19 +22,19 @@
 	text-decoration: none;
 }
 
-.nav-container::before{
+.nav-container::before {
 	content: '';
 	position: absolute;
 	top: 0;
 	left: -100%;
 	width: 100%;
 	height: 100%;
-	background: linear-gradient(90deg,transparent,rgba(255,255,255,.4),transparent);
+	background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .4), transparent);
 	transition: .5s;
 }
 
-.nav-container:hover::before{
-	left:100%;
+.nav-container:hover::before {
+	left: 100%;
 }
 
 .links {
@@ -52,7 +52,7 @@
 
 .links a {
 	color: white;
-	font-size: 2rem;
+	font-size: 3rem;
 	display: block;
 }
 
@@ -65,17 +65,21 @@
 		align-items: center;
 		height: 70px;
 	}
+
 	.links a {
-		font-size: 1rem;
+		font-size: 1.5rem;
 		color: white;
 		display: inline;
 	}
+
 	.social-links {
-		padding-left: 3rem;
+		padding-left: 2rem;
 	}
+
 	.social-links a {
 		font-size: 1.5rem;
 	}
+
 	.burguer {
 		display: none;
 	}
@@ -123,7 +127,7 @@
 	width: 100%;
 	height: 100vh;
 
-	
+
 }
 
 .social-links {
@@ -135,6 +139,8 @@
 
 /* Estilo de desenfoque para el menú backdrop */
 .backdrop-blur {
-	backdrop-filter: blur(8px); /* Ajusta el valor según el nivel de desenfoque deseado */
-	transition: backdrop-filter 0.3s; /* Agrega una transición suave */
- }
+	backdrop-filter: blur(8px);
+	/* Ajusta el valor según el nivel de desenfoque deseado */
+	transition: backdrop-filter 0.3s;
+	/* Agrega una transición suave */
+}
