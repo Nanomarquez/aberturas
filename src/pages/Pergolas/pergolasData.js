@@ -1,7 +1,7 @@
-import imgPergolas1 from '/images/cerramientos_1.jpg';
-import imgPergolas2 from '/images/cerramientos_2.jpg';
-import imgPergolas3 from '/images/cerramientos_3.jpg';
-import imgPergolas4 from '/images/cerramientos_4.jpg';
+import imgPergolas1 from '/images/pergolas_1.jpg';
+import imgPergolas2 from '/images/pergolas_2.jpg';
+import imgPergolas3 from '/images/pergolas_3.jpg';
+import imgPergolas4 from '/images/pergolas_4.jpg';
 import imgPergolas5 from '/images/pergolas_preview.jpg';
 
 const pergolas = [
