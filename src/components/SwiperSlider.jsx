@@ -116,7 +116,7 @@ function SwiperSlider() {
 						</div>
 						<div className=" navcont absolute top-[10rem] left-0 w-[100%] h-[100%] flex flex-col justify-center items-center bg-color[rgba(0,0,0,0.5)] text-white pt-20">
 							<Link
-								to={'/mamparas-barandas-herreria-products'}
+								to={'/herreria-products'}
 								className=" nav-link nav-link-fade-up">
 								VER MAS
 							</Link>
@@ -152,7 +152,7 @@ function SwiperSlider() {
 						</div>
 						<div className=" navcont absolute top-[10rem] left-0 w-[100%] h-[100%] flex flex-col justify-center items-center bg-color[rgba(0,0,0,0.5)] text-white pt-20">
 							<Link
-								to={'/mamparas-barandas-herreria-products'}
+								to={'/mamparas-products'}
 								className=" nav-link nav-link-fade-up">
 								VER MAS
 							</Link>
@@ -170,7 +170,7 @@ function SwiperSlider() {
 						</div>
 						<div className=" navcont  absolute top-[10rem] left-0 w-[100%] h-[100%] flex flex-col justify-center items-center bg-color[rgba(0,0,0,0.5)] text-white pt-20">
 							<Link
-								to={'/mamparas-barandas-herreria-products'}
+								to={'/barandas-products'}
 								className=" nav-link nav-link-fade-up">
 								VER MAS
 							</Link>

@@ -1,14 +1,14 @@
 import Footer from '../../components/Footer/Footer';
 import Map from '../../components/Map';
-import mamparas from './mamparasData';
-// import barandas from './barandasData';
+// import mamparas from './mamparasData';
+import barandas from './barandasData';
 // import herreria from './herreriadata';
 
 import { useState } from 'react';
 import Modal from 'react-modal';
 import { isMobile } from 'react-device-detect';
 
-const Mamparas = () => {
+const Barandas = () => {
 	const [modalIsOpen, setModalIsOpen] = useState(false);
 	const [selectedImage, setSelectedImage] = useState(null);
 
@@ -25,13 +25,14 @@ const Mamparas = () => {
 		<div className=" bg-gradient-linear-custom">
 			<br />
 			<br />
+
+			{/* barandas */}
 			<div
 				className={`h-[13vh] bg-gradient-linear-blue bg-cover flex flex-col justify-center items-center gap-10 text-white  py-3 lg:py-6 shadow-custom rounded-br-[30%] rounded-bl-[5%] min-w-[100%] lg:px-0   `}>
-				{/* <p>MAMPARAS</p> */}
-				<h2 className="text-5xl font-bold">MAMPARAS</h2>
+				<h2 className="text-5xl font-bold">BARANDAS</h2>
 			</div>
 			<div className="gallery">
-				{mamparas.map((image, index) => (
+				{barandas.map((image, index) => (
 					<div
 						className="pics relative overflow-hidden rounded-md"
 						key={index}
@@ -120,4 +121,4 @@ const Mamparas = () => {
 	);
 };
 
-export default Mamparas;
+export default Barandas;

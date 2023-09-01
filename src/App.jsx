@@ -14,9 +14,13 @@ import Cortinas from './pages/Cortinas/Cortinas';
 import Cerramientos from './pages/Cerramientos/Cerramientos';
 import Pergolas from './pages/Pergolas/Pergolas';
 import Mamparas from './pages/Mamparas/Mamparas';
+import Barandas from './pages/Barandas/Barandas';
+import Herreria from './pages/Herreria/Herreria';
+import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 
 function App() {
 	const [clicked, setClicked] = React.useState(false);
+
 	const handleClick = () => {
 		if (window.innerWidth < 768) {
 			//cuando esta true lo pasa a false y vice versa
@@ -34,6 +38,7 @@ function App() {
 				clicked={clicked}
 				handleClick={handleClick}
 			/>
+			<ScrollToTop />
 			<Routes>
 				<Route
 					path="/"
@@ -69,8 +74,16 @@ function App() {
 					element={<Pergolas />}
 				/>
 				<Route
-					path="/mamparas-barandas-herreria-products"
+					path="/mamparas-products"
 					element={<Mamparas />}
+				/>
+				<Route
+					path="/herreria-products"
+					element={<Herreria />}
+				/>
+				<Route
+					path="/barandas-products"
+					element={<Barandas />}
 				/>
 			</Routes>
 		</>

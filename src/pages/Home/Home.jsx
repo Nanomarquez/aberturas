@@ -19,7 +19,7 @@ function Home({ clicked }) {
     speed: 2000,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay: true,
+    autoplay: false,
     autoplaySpeed: 3000,
     arrows: true,
   };
@@ -53,7 +53,7 @@ function Home({ clicked }) {
                   data-aos-delay="500"
                   data-aos-duration="1000"
                   data-aos="fade-up"
-                  className=" text-xl lg:text-4xl drop-shadow-md font-bold text-[#ECECEC] lg:text-white mt-20"
+                  className=" text-2xl lg:text-4xl drop-shadow-md font-bold text-[#ECECEC] lg:text-white mt-20"
                 >
                   ¡DESCUBRÍ LA EXCELENCIA EN ABERTURAS Y MÁS!
                 </p>
@@ -69,11 +69,11 @@ function Home({ clicked }) {
                 <h4
                   data-aos-duration="1000"
                   data-aos="zoom-in"
-                  className="lg:leading-[50px] text-2xl lg:text-7xl  drop-shadow-lg text-slate-400 font-semibold"
+                  className="lg:leading-[50px] text-4xl lg:text-7xl  drop-shadow-lg text-slate-400 font-semibold"
                 >
                   CREAMOS EL AMBIENTE <br /> QUE MERECES PARA TU HOGAR
                 </h4>
-                <ul className="text-2xl mt-14 lg:mt-20 lg:text-5xl drop-shadow-md font-medium bg-gradient-blue-teal custom-list">
+                <ul className="text-4xl mt-14 lg:mt-20 lg:text-5xl drop-shadow-md font-semibold bg-gradient-blue-teal custom-list">
                   <li className=" my-1 text-slate-400">TECNOLOGIA</li>
                   <li className=" my-1 text-slate-400">CALIDAD</li>
                   <li className=" my-1 text-slate-400">SEGURIDAD</li>
@@ -105,7 +105,7 @@ function Home({ clicked }) {
           className={`h-[60vh] flex flex-col justify-center items-center bg-gradient-linear-custom text-gray-800 text-center sm:text-left sm:px-24 gap-12`}
         >
           <p
-            className="tracking-[0.150em] font-normal max-w-[70%] text-xl lg:text-2xl"
+            className="tracking-[0.150em] font-normal max-w-[70%] text-xl lg:text-3xl mt-[20px] "
             data-aos-duration="1000"
             data-aos="fade-right"
           >

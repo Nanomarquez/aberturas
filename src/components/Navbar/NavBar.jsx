@@ -138,13 +138,13 @@ function Navbar({ clicked, handleClick }) {
 									PÉRGOLAS
 								</Link>
 								<Link
-									to={'/mamparas-barandas-herreria-products'}
+									to={'/mamparas-products'}
 									className="my-2 block border-b border-gray-100 py-1 font-semibold text-gray-500  md:mx-2"
 									onClick={handleLinkClick}>
 									MAMPARAS
 								</Link>
 								<Link
-									to={'/mamparas-barandas-herreria-products'}
+									to={'/barandas-products'}
 									className="my-2 block border-b border-gray-100 py-1 font-semibold text-gray-500  md:mx-2"
 									onClick={handleLinkClick}>
 									BARANDAS
@@ -156,7 +156,7 @@ function Navbar({ clicked, handleClick }) {
 									CORTINAS ROLLER
 								</Link>
 								<Link
-									to={'/mamparas-barandas-herreria-products'}
+									to={'/herreria-products'}
 									className="my-2 block border-b border-gray-100 py-1 font-semibold text-gray-500 md:mx-2"
 									onClick={handleLinkClick}>
 									HERRERÍA
