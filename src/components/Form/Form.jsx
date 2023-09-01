@@ -21,7 +21,7 @@ export default function Form() {
 	const sendEmail = () => {
 		event.preventDefault();
 
-		const phoneNumber = '+5491136737281'; // Número de teléfono al que se enviará el mensaje
+		const phoneNumber = '+5491165282356'; // Número de teléfono al que se enviará el mensaje
 		const message = `¡Hola! Me gustaría obtener más información.
 	- Nombre: *${userData.user_name}*
 	- Email: ${userData.user_email}
